@@ -81,24 +81,35 @@ form {
     gap: 2vh;
 }
 
-input {
+input,
+textarea {
     width: 300px;
-    height: 5vh;
     font-size: 1.2em;
     font-weight: bolder;
     border: gray 2px solid;
-    border-radius: 2.5vh;
-    padding-left: 2.5vh;
-    padding-right: 2.5vh;
+    border-radius: var(--border-radius);
     outline: none;
 }
 
-input::placeholder {
+input {
+    height: 5vh;
+    padding-left: var(--border-radius);
+    padding-right: var(--border-radius);
+}
+
+textarea {
+    height: 150px;
+    padding: var(--border-radius);
+}
+
+input::placeholder,
+textarea::placeholder {
     color: grey;
 }
 
-input:focus {
-    border-color: #2440F2;
+input:focus,
+textarea:focus {
+    border-color: var(--color-primary);
 }
 
 form button {

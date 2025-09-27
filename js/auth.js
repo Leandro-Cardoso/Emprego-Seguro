@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    const API_LOGIN_URL = 'http://127.0.0.1:5001/login';
+    const API_LOGIN_URL = 'http://localhost:5001/login';
 
     try {
 
