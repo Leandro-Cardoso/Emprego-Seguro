@@ -1,4 +1,4 @@
-const LOGIN_PAGE_URL = './login.html'; 
+const LOGIN_PAGE_URL = 'login.html'; 
 
 function getUser() {
 
