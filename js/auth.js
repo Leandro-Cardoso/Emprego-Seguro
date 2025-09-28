@@ -1,3 +1,5 @@
+localStorage.removeItem('user');
+
 document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     

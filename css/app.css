@@ -98,7 +98,8 @@ header nav ul {
     gap: var(--spacing);
 }
 
-header nav a {
+header nav a,
+header nav a:visited {
     background-color: var(--color-primary);
     color: var(--color-background-primary);
 
