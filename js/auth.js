@@ -18,22 +18,13 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
 
         const user = await response.json();
 
-        if (response.ok) {
+        localStorage.setItem('user', JSON.stringify(user)); 
             
-            localStorage.setItem('user', JSON.stringify(user)); 
-            
-            window.location.href = 'index.html';
-
-        } else {
-            
-            alert(`Erro no login: ${user.message || 'Nome de usuário ou senha inválidos.'}`);
-
-        }
+        window.location.href = 'index.html';
 
     } catch (error) {
 
-        console.error('Erro na requisição de login:', error);
-        alert('Ocorreu um erro na comunicação com o servidor.');
+        alert('Usuário ou senha incorretos.');
 
     }
 
