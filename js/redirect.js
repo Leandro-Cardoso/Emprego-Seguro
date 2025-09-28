@@ -1,12 +1,10 @@
-const LOGIN_URL = 'login.html'; 
-
 function getUser() {
 
-    const userString = localStorage.getItem('user'); 
+    const userString = localStorage.getItem(LOCAL_STORAGE_KEY); 
 
     if (!userString) {
 
-        window.location.href = LOGIN_URL; // Redirecionar
+        window.location.href = LOGIN_PAGE_URL; // Redirecionar
 
         return null;
 

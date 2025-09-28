@@ -1,7 +1,3 @@
-const LOGIN_PAGE_URL = 'login.html';
-const API_USERS_URL = 'http://localhost:5001/users';
-const LOCAL_STORAGE_KEY = 'user';
-
 // MENU:
 function toggleMenu(id) {
 

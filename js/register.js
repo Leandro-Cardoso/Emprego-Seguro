@@ -8,11 +8,9 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     const location = document.getElementById('location').value;
     const description = document.getElementById('description').value;
 
-    const API_REGISTER_URL = 'http://localhost:5001/users';
-
     try {
 
-        const response = await fetch(API_REGISTER_URL, {
+        const response = await fetch(API_USERS_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(

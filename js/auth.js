@@ -1,12 +1,10 @@
-localStorage.removeItem('user');
+localStorage.removeItem(LOCAL_STORAGE_KEY);
 
 document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
-    const API_LOGIN_URL = 'http://localhost:5001/login';
 
     try {
 
