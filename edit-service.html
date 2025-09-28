@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Emprego Seguro</title>
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+    <link rel="stylesheet" href="./css/app.css">
+
+</head>
+<body>
+
+    <header id="header"></header>
+    
+    <main>
+
+        <h1>Emprego Seguro</h1>
+
+        <img src="./assets/images/logo.png" alt="Logo">
+
+        <h2>Editar Serviço</h2>
+
+        <form id="edit-service-form">
+
+            <div class="form-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea id="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Categoria:</label>
+                <input type="text" id="category" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Preço (R$):</label>
+                <input type="number" id="price" step="0.01"> 
+            </div>
+
+            <div class="form-group">
+                <label for="location">Localização:</label>
+                <input type="text" id="location" required>
+            </div>
+
+            <button type="submit">Atualizar</button>
+
+        </form>
+
+    </main>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/redirect.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/edit-service.js"></script>
+
+</body>
+</html>

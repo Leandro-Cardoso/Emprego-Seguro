@@ -81,10 +81,7 @@ function createService() {
 
 function editService(serviceId) {
 
-    alert('Função de Edição do Serviço ' + serviceId + ' (a implementar)');
-    // Aqui você redirecionará para a página de edição de serviço.
-
-    loadUserServices();
+    window.location.href = `edit-service.html?id=${serviceId}`;
 
 }
 
