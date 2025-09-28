@@ -23,32 +23,40 @@ async function loadServiceData(serviceId) {
 
 async function handleUpdate(e) {
 
-    e.preventDefault();
-    
-    const updatedData = {
-        
-        user_id: currentUserId, 
-        
-        title: document.getElementById('title').value,
-        description: document.getElementById('description').value,
-        category: document.getElementById('category').value,
-        location: document.getElementById('location').value,
-        
-        price: parseFloat(document.getElementById('price').value)
+    try {
 
-    };
-    
-    const response = await fetch(`${API_SERVICES_URL}/${currentServiceId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedData)
-    });
+        e.preventDefault();
+        
+        const updatedData = {
+            
+            user_id: currentUserId, 
+            
+            title: document.getElementById('title').value,
+            description: document.getElementById('description').value,
+            category: document.getElementById('category').value,
+            location: document.getElementById('location').value,
+            
+            price: parseFloat(document.getElementById('price').value)
 
-    const updatedServiceObject = await response.json();
+        };
+        
+        const response = await fetch(`${API_SERVICES_URL}/${currentServiceId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedData)
+        });
 
-    alert(`Serviço "${updatedServiceObject.title}" atualizado com sucesso!`);
-    
-    window.location.href = SERVICES_PAGE_URL;
+        const updatedServiceObject = await response.json();
+
+        alert(`Serviço "${updatedServiceObject.title}" atualizado com sucesso!`);
+        
+        window.location.href = SERVICES_PAGE_URL;
+
+    } catch (error) {
+
+        alert('Algum dado já foi utilizado em outro cadastro.');
+
+    }
 
 }
 

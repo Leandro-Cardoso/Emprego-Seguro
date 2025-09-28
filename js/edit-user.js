@@ -16,37 +16,45 @@ function loadUserProfile() {
 
 async function handleUpdate(e) {
     
-    e.preventDefault();
-    
-    const updatedData = {
-        username: document.getElementById('username').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        phone: document.getElementById('phone').value,
-        location: document.getElementById('location').value,
-        description: document.getElementById('description').value
-    };
-    
-    if (!updatedData.password) {
-        delete updatedData.password;
+    try {
+
+        e.preventDefault();
+        
+        const updatedData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            phone: document.getElementById('phone').value,
+            location: document.getElementById('location').value,
+            description: document.getElementById('description').value
+        };
+        
+        if (!updatedData.password) {
+            delete updatedData.password;
+        }
+
+        const response = await fetch(`${API_USERS_URL}/${currentUser.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedData)
+        });
+
+        const updatedUserObject = await response.json();
+        const newUserState = { ...currentUser, ...updatedUserObject };
+        
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newUserState));
+
+        currentUser = newUserState; 
+
+        alert('Perfil atualizado com sucesso!');
+
+        loadUserProfile();
+
+    } catch (error) {
+
+        alert('Algum dado já foi utilizado em outro cadastro.');
+
     }
-
-    const response = await fetch(`${API_USERS_URL}/${currentUser.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedData)
-    });
-
-    const updatedUserObject = await response.json();
-    const newUserState = { ...currentUser, ...updatedUserObject };
-    
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newUserState));
-
-    currentUser = newUserState; 
-
-    alert('Perfil atualizado com sucesso!');
-
-    loadUserProfile();
 
 }
 
