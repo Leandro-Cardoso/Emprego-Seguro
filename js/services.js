@@ -88,11 +88,19 @@ function editService(serviceId) {
 
 }
 
-function deleteService(serviceId) {
+async function deleteService(serviceId) {
 
-    alert('Função de Exclusão do Serviço ' + serviceId + ' (a implementar)');
-    // Aqui você fará a requisição DELETE para /services/<service_id>
+    const confirmDelete = confirm('Tem certeza que deseja EXCLUIR o serviço?');
+    
+    if (!confirmDelete) {
+        return;
+    }
 
-    loadUserServices();
+    const response = await fetch(
+        `${API_SERVICES_URL}/${serviceId}`,
+        {method: 'DELETE'}
+    );
+
+    await loadUserServices();
 
 }

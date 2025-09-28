@@ -43,21 +43,13 @@ async function deleteUser() {
         return;
     }
 
-    try {
+    const response = await fetch(
+        `${API_USERS_URL}/${user.id}`,
+        {method: 'DELETE'}
+    );
+
+    alert(`Conta do usuário ${user.username} excluída com sucesso do servidor.`);
         
-        const response = await fetch(
-            `${API_USERS_URL}/${user.id}`,
-            {method: 'DELETE'}
-        );
-
-        alert(`Conta do usuário ${user.username} excluída com sucesso do servidor.`);
-            
-        cleanupAndRedirect();
-
-    } catch (error) {
-
-        alert('Não foi possível conectar ao servidor para excluir a conta.');
-
-    }
+    cleanupAndRedirect();
 
 }
