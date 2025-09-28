@@ -33,16 +33,86 @@ body {
     margin: 0 auto;
 }
 
+header,
 main {
     background-color: var(--color-background-primary);
 
     width: 100%;
     padding: var(--spacing);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--spacing);
+}
+
+header div.header-bar {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div.header-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+header img {
+    height: 50px;
+}
+
+header img:nth-child(2) {
+    cursor: pointer;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: var(--spacing);
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+header nav ul {
+    width: 100%;
+    
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+header nav a {
+    background-color: var(--color-primary);
+    color: var(--color-background-primary);
+
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+    width: 100;
+    padding: var(--spacing);
+
+    display: block;
+}
+
+main {
     flex-grow: 1;
 }
 
@@ -168,4 +238,8 @@ form label {
 
 img {
     height: 200px;
+}
+
+.hide {
+    display: none !important;
 }
