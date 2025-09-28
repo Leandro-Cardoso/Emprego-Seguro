@@ -21,7 +21,7 @@ body {
     background-color: var(--color-background-secundary);
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    font-size: 0.8em;
+    font-size: var(--spacing);
     color: var(--color-text);
 
     display: flex;
@@ -92,7 +92,7 @@ textarea {
 }
 
 input {
-    height: 5vh;
+    height: calc(var(--spacing) * 3);
     padding-left: var(--border-radius);
     padding-right: var(--border-radius);
 }
@@ -117,7 +117,7 @@ form button {
     color: white;
     border: 0;
     border-radius: 1vh;
-    padding: 1em;
+    padding: var(--spacing);
     min-width: 200px;
 }
 
@@ -141,6 +141,30 @@ form label {
     font-size: 1.2em;
     font-weight: bolder;
 }
+
+/* SEARCH FORM */
+#search-form {
+    width: 100%;
+    flex-direction: row;
+    gap: 0;
+}
+
+#search-form input {
+    width: 100%;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#search-form button {
+    min-width: 50px;
+    padding: calc(var(--spacing) + 2px);
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* OTHERS */
 
 img {
     height: 200px;
