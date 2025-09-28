@@ -1,6 +1,7 @@
 :root {
     /* Colors */
     --color-primary: #2440F2;
+    --color-secundary: #c7cfff;
     --color-background-primary: white;
     --color-background-secundary: black;
     --color-text: black;
@@ -183,7 +184,7 @@ textarea:focus {
     border-color: var(--color-primary);
 }
 
-form button {
+button {
     background-color: var(--color-primary);
     color: white;
     border: 0;
@@ -233,6 +234,20 @@ form label {
 
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+/* CARDS */
+.services-grid,
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.service-card {
+    background-color: var(--color-secundary);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
 }
 
 /* OTHERS */
