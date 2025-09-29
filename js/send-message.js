@@ -43,7 +43,7 @@ async function handleSendMessage(e) {
     });
     
     setTimeout(() => {
-        window.location.href = 'out-box.html'; 
+        window.location.href = 'outbox.html'; 
     }, 1500);
 
 }
