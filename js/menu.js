@@ -42,7 +42,7 @@ async function updateUnreadCount() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(updateUnreadCount, 50);
+    setTimeout(updateUnreadCount, 1500);
 });
 
 // MOSTRAR NOME DE USUARIO:
