@@ -65,6 +65,17 @@ header div.header-title {
     gap: var(--spacing);
 }
 
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing);
+}
+
+.icons a,
+.icons a:visited {
+    color: red;
+}
+
 header img {
     height: 50px;
 }
