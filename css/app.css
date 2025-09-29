@@ -89,6 +89,11 @@ header h1 {
     font-size: var(--spacing);
 }
 
+header #counter-mensages {
+    font-size: calc(var(--spacing) * 2);
+    font-weight: bolder;
+}
+
 header nav {
     width: 100%;
 
