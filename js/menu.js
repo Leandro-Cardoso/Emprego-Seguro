@@ -43,12 +43,31 @@ async function deleteUser() {
         return;
     }
 
+    const allServicesResponse = await fetch(
+        API_SERVICES_URL,
+        { method: 'GET' }
+    );
+    
+    const allServices = await allServicesResponse.json(); 
+    const userServices = allServices.filter(service => service.user_id === user.id);
+
+    if (userServices && userServices.length > 0) {
+        
+        const deletePromises = userServices.map(service => {
+            return fetch(
+                `${API_SERVICES_URL}/${service.id}`,
+                { method: 'DELETE' }
+            );
+        });
+        
+        await Promise.all(deletePromises);
+
+    }
+
     const response = await fetch(
         `${API_USERS_URL}/${user.id}`,
         {method: 'DELETE'}
     );
-
-    // TODO: APAGAR TODOS OS SERVIÇOS DO USUÁRIO
 
     alert(`Conta do usuário ${user.username} excluída com sucesso do servidor.`);
         
