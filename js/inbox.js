@@ -62,6 +62,28 @@ async function loadInbox() {
 
     }
 
+    const markAsReadPromises = receivedMessages
+        .filter(message => message.read === false) 
+        .map(message => {
+            const updatedMessage = {
+                content: message.content,
+                read: true
+            };
+            return fetch(`${API_MESSAGES_URL}/${message.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedMessage) 
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.error(`Falha na API ao marcar mensagem ${message.id}. Status: ${response.status}`);
+                }
+            })
+            .catch(error => {
+                console.error(`Falha de rede ao marcar mensagem ${message.id}:`, error);
+            });
+        });
+
     const messagesWithUsernames = await Promise.all(
         receivedMessages.map(async (message) => {
             
