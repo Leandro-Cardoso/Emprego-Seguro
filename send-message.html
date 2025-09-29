@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Emprego Seguro</title>
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+    <link rel="stylesheet" href="./css/app.css">
+
+</head>
+<body>
+
+    <header id="header"></header>
+    
+    <main>
+
+        <h2>Nova Mensagem</h2>
+
+        <h3>Enviar Mensagem para: <span id="receiver-name">...</span></h3>
+
+        <form id="send-message-form">
+
+            <input type="hidden" id="receiver-id"> <div class="form-group">
+
+                <label for="message-content">Sua Mensagem:</label>
+
+                <textarea id="message-content" rows="6" required></textarea>
+                
+            </div>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </main>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/redirect.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/send-message.js"></script>
+
+</body>
+</html>

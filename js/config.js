@@ -6,7 +6,8 @@ const SERVICES_PAGE_URL = 'services.html';
 const API_URL = 'http://localhost:5001';
 const API_LOGIN_URL = API_URL + '/login';
 const API_USERS_URL = API_URL + '/users';
-const API_SERVICES_URL = API_URL + '/services'; 
+const API_SERVICES_URL = API_URL + '/services';
+const API_MESSAGES_URL = API_URL + '/messages';
 
 // LOCAL STORAGE:
 const LOCAL_STORAGE_KEY = 'user';

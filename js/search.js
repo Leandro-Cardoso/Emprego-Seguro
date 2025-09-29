@@ -27,6 +27,10 @@ function createServiceCard(service) {
                 <p><strong>Localização:</strong> ${service.location}</p>
                 <p class="service-description">${service.description}</p>
 
+                <button onclick="sendMessage(${service.user_id}, '${service.username}')">
+                    Enviar Mensagem
+                </button>
+
             </div>
         `;
     }
@@ -42,6 +46,10 @@ function createServiceCard(service) {
             <p><strong>Localização:</strong> ${service.location}</p>
             <p class="service-price"><strong>${formattedPrice}</strong></p>
             <p class="service-description">${service.description}</p>
+
+            <button onclick="sendMessage(${service.user_id}, '${service.username}')">
+                Enviar Mensagem
+            </button>
 
         </div>
     `;
@@ -94,6 +102,21 @@ async function handleSearch(e) {
         container.innerHTML = '<h2>Nenhum Resultado...</h2>';
 
     }
+
+}
+
+async function sendMessage(receiverId, receiverUsername) {
+    
+    const userString = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const user = JSON.parse(userString);
+    const senderId = user.id;
+
+    if (senderId === receiverId) {
+        alert("Você não pode enviar uma mensagem para si mesmo.");
+        return;
+    }
+
+    window.location.href = `send-message.html?receiverId=${receiverId}&receiverUsername=${receiverUsername}`;
 
 }
 
