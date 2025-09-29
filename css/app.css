@@ -236,6 +236,15 @@ form label {
     border-bottom-left-radius: 0;
 }
 
+#search-results {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+}
+
 /* CARDS */
 .services-grid,
 .service-card {
@@ -248,6 +257,13 @@ form label {
     background-color: var(--color-secundary);
     border-radius: var(--border-radius);
     padding: var(--spacing);
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing);
 }
 
 /* OTHERS */

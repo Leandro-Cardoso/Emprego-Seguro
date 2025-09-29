@@ -48,6 +48,8 @@ async function deleteUser() {
         {method: 'DELETE'}
     );
 
+    // TODO: APAGAR TODOS OS SERVIÇOS DO USUÁRIO
+
     alert(`Conta do usuário ${user.username} excluída com sucesso do servidor.`);
         
     cleanupAndRedirect();
