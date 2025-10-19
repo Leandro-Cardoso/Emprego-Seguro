@@ -16,6 +16,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -28,9 +29,8 @@ body {
     display: flex;
     flex-direction: column;
 
-    box-sizing: border-box;
     min-height: 100vh;
-    max-width: 500px;
+    width: 500px;
     margin: 0 auto;
 }
 
@@ -266,6 +266,8 @@ form label {
 .service-card,
 .messages-grid,
 .message-card {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     gap: var(--spacing);
@@ -281,6 +283,7 @@ form label {
 .actions {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: var(--spacing);
 }
@@ -293,4 +296,14 @@ img {
 
 .hide {
     display: none !important;
+}
+
+@media (max-width: 550px) {
+    body {
+        width: 100%;
+    }
+    input,
+    textarea {
+        width: 70%;
+    }
 }
