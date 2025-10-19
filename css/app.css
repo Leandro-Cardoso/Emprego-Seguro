@@ -280,6 +280,10 @@ form label {
     padding: var(--spacing);
 }
 
+.service-card iframe {
+    width: 100%;
+}
+
 .actions {
     display: flex;
     flex-direction: row;

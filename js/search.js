@@ -14,6 +14,8 @@ function createServiceCard(service) {
         currency: 'BRL'
     }).format(service.price || 0);
 
+    mapImage = createMapIframe(service.location);
+    
     if (service.price <= 0) {
 
         return `
@@ -26,6 +28,8 @@ function createServiceCard(service) {
                 <p><strong>Categoria:</strong> ${service.category}</p>
                 <p><strong>Localização:</strong> ${service.location}</p>
                 <p class="service-description">${service.description}</p>
+
+                ${mapImage}
 
                 <button onclick="sendMessage(${service.user_id}, '${service.username}')">
                     Enviar Mensagem
@@ -46,6 +50,8 @@ function createServiceCard(service) {
             <p><strong>Localização:</strong> ${service.location}</p>
             <p class="service-price"><strong>${formattedPrice}</strong></p>
             <p class="service-description">${service.description}</p>
+
+            ${mapImage}
 
             <button onclick="sendMessage(${service.user_id}, '${service.username}')">
                 Enviar Mensagem
