@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emprego Seguro</title>
+
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+    <link rel="stylesheet" href="./css/app.css">
+
+</head>
+<body>
+    
+    <header id="header"></header>
+
+    <main>
+
+        <h1 id="vendedor-username">Carregando Perfil...</h1>
+
+        <p id="loading-message">Buscando informações do vendedor...</p>
+
+        <div id="vendedor-details" style="display: none;" class="service-card">
+            <h2>Informações de Contato</h2>
+            <p><strong>Email:</strong> <span id="vendedor-email"></span></p>
+            <p><strong>Telefone:</strong> <span id="vendedor-phone"></span></p>
+            <p><strong>Localização:</strong> <span id="vendedor-location"></span></p>
+
+            <h2>Sobre o Vendedor</h2>
+            <p id="vendedor-description"></p>
+            
+            <button id="message-button" onclick=""></button>
+        </div>
+
+        <div id="error-message" style="color: red; display: none;">
+            <h2>Erro ao carregar o perfil...</h2>
+        </div>
+
+    </main>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/redirect.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/profile.js"></script>
+
+</body>
+</html>
