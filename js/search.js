@@ -15,6 +15,16 @@ function createServiceCard(service) {
     }).format(service.price || 0);
 
     mapImage = createMapIframe(service.location);
+
+    const profileUrl = `profile.html?userId=${service.user_id}`;
+    const userDisplay = `
+        <p>
+            <strong>Usuário:</strong> 
+            <a href="${profileUrl}" class="username-link btn">
+                ${service.username || 'Carregando...'}
+            </a>
+        </p>
+    `;
     
     if (service.price <= 0) {
 
@@ -23,9 +33,7 @@ function createServiceCard(service) {
 
                 <h3>${service.title}</h3>
 
-                <p><strong>Usuário:</strong> ${service.username || 'Carregando...'}</p>
-
-                <p><strong>Categoria:</strong> ${service.category}</p>
+                ${userDisplay} <p><strong>Categoria:</strong> ${service.category}</p>
                 <p><strong>Localização:</strong> ${service.location}</p>
                 <p class="service-description">${service.description}</p>
 
@@ -44,9 +52,7 @@ function createServiceCard(service) {
 
             <h3>${service.title}</h3>
 
-            <p><strong>Usuário:</strong> ${service.username || 'Carregando...'}</p>
-
-            <p><strong>Categoria:</strong> ${service.category}</p>
+            ${userDisplay} <p><strong>Categoria:</strong> ${service.category}</p>
             <p><strong>Localização:</strong> ${service.location}</p>
             <p class="service-price"><strong>${formattedPrice}</strong></p>
             <p class="service-description">${service.description}</p>

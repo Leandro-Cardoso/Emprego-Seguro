@@ -261,6 +261,12 @@ form label {
     gap: var(--spacing);
 }
 
+#search-results a {
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
 /* CARDS */
 .services-grid,
 .service-card,
